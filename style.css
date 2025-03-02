@@ -1,0 +1,114 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #1e1e2f;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+#messageForm {
+  background: #2c2c3a;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  margin: auto;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+input,
+textarea {
+  width: 90%;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Submit Button */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(135deg, rgb(97, 226, 97), green);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Post Section */
+#messages {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Post */
+.posts {
+  background: #2e2e44;
+  padding: 15px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+
+/* Post Title */
+.posts h1 {
+  font-size: 20px;
+  color: #ff9f43;
+  margin-bottom: 10px;
+}
+
+/* Post Content */
+.posts p {
+  color: white;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Title and Delete Section */
+.titleDelete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Delete Button */
+.posts button {
+  background: linear-gradient(135deg, rgb(238, 39, 39), rgb(97, 27, 5));
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.posts button:hover {
+  background: linear-gradient(135deg, rgb(129, 36, 36), rgb(156, 15, 15));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #messageForm {
+    width: 90%;
+  }
+  #messages {
+    width: 100%;
+  }
+  .posts {
+    width: 90%;
+  }
+}
