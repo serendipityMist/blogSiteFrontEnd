@@ -24,10 +24,24 @@ submit.addEventListener("click", (e) => {
     return;
   }
 
+  //Trying to check whether there is post with same title
+  let isDuplicate = postMessage.some(
+    (element) => element.title === messageTitle.value
+  );
+
+  if (isDuplicate) {
+    alert("A post with same title already exits....");
+    return;
+  }
+
+  let getTime = new Date();
+  let formattedDate = getTime.toLocaleString();
+
   postMessage.push({
     message: message.value,
     postID: postID,
     title: messageTitle.value,
+    date: formattedDate,
   });
 
   messageTitle.value = "";
@@ -60,12 +74,19 @@ function posts(post) {
   const delBtn = document.createElement("button");
   delBtn.textContent = "Delete";
 
+  //Creating POST date
+  const date = document.createElement("p");
+  date.textContent = `Posted On: ${post.date}`;
+  date.style.fontSize = "12px";
+  date.style.color = "#bbb";
+
   postDiv.appendChild(topSection);
   topSection.appendChild(postTitle);
   topSection.appendChild(delBtn);
   postDiv.appendChild(postText);
+  postDiv.appendChild(date);
 
-  //TODO: ADD COMMENT SECTION
+  //TODO: ADD COMMENT SECTION //
 
   delBtn.addEventListener("click", () => {
     console.log(`The post ID is ${post.postID}`);
